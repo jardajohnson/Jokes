@@ -2,7 +2,7 @@ const JokeController = require('../controllers/joke.controller');
 
 module.exports = (app) => {
 	// Read (All)
-	app.get('/api/jokes/', JokeController.findAllJokes);
+	app.get('/api/jokes', JokeController.findAllJokes);
 	// Read (One)
 	app.get('/api/jokes/:id', JokeController.findOneSingleJoke);
 	// Read (Random)
