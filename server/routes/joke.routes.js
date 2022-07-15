@@ -7,7 +7,7 @@ module.exports = (app) => {
 	app.get('/api/jokes/:id', JokeController.findOneSingleJoke);
 	// Read (Random)
 	app.get('/api/jokes/get/random/', JokeController.findRandomJoke);
-	app.put('/api/jokes/update/:id', JokeController.updateExistingJoke);
+	app.put('/api/jokes/:id', JokeController.updateExistingJoke);
 	app.post('/api/jokes/new', JokeController.createNewJoke);
 	app.delete('/api/jokes/:id', JokeController.deleteAnExistingJoke);
 };
