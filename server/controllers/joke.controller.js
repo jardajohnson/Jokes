@@ -10,7 +10,10 @@ module.exports.findAllJokes = (req, res) => {
 
 module.exports.findRandomJoke = (req, res) => {
 	Joke.find()
-		.then((allDaJokes) => res.json({ joke: allDaJokes[0] }))
+		.then((allDaJokes) => {
+			const randomNumber = Math.floor(Math.random() * allDaJokes.length);
+			res.json({ joke: allDaJokes[randomNumber] });
+		})
 		.catch((err) =>
 			res.json({ message: 'Something went wrong', error: err })
 		);
