@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
+require('./server/config/mongoose.config');
 
-// req is short for request
-// res is short for response
-app.get('/api', (req, res) => {
-	res.send('Our express api server is now sending this over to the browser');
-});
+// ! Middleware
+app.use(express.json(), express.urlencoded({ extended: true }));
+// ! Passes express functions to routes
+require('./server/routes/joke.routes')(app);
 
 const server = app.listen(8080, () =>
 	console.log(`Server is locked and loaded on port ${server.address().port}!`)
