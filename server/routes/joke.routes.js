@@ -9,5 +9,5 @@ module.exports = (app) => {
 	app.get('/api/jokes/get/random/', JokeController.findRandomJoke);
 	app.put('/api/jokes/update/:id', JokeController.updateExistingJoke);
 	app.post('/api/jokes/new', JokeController.createNewJoke);
-	app.delete('/api/jokes/delete/:id', JokeController.deleteAnExistingJoke);
+	app.delete('/api/jokes/:id', JokeController.deleteAnExistingJoke);
 };
